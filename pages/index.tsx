@@ -2,6 +2,8 @@ import React from "react";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 
+import Navbar from "@/components/Navbar";
+
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
 
@@ -20,7 +22,11 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 const Home = () => {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default Home;
