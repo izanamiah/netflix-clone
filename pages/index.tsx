@@ -1,7 +1,26 @@
-export default function Home() {
-  return (
-    <>
-      <h1>netflix clone</h1>
-    </>
-  );
+import React from "react";
+import { NextPageContext } from "next";
+import { getSession } from "next-auth/react";
+
+export async function getServerSideProps(context: NextPageContext) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 }
+
+const Home = () => {
+  return <></>;
+};
+
+export default Home;

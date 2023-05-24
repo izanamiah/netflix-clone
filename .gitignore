@@ -5,12 +5,18 @@
 /.pnp
 .pnp.js
 
+
+# env
+.env
+
 # testing
 /coverage
 
 # next.js
 /.next/
 /out/
+
+
 
 # production
 /build
